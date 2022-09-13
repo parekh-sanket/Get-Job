@@ -160,7 +160,7 @@ router.get("/verify/:userId/:uniqueString", (req, res) => {
                     UserVerification.deleteOne({userId})
                       .then(() => {
                         // res.send({message : "Email verified successfully!", redirect_path: "http://localhost:3000/login/"});
-                        let message = "Email verified successfully!";
+                        let message = "Emailverifiedsuccessfully!";
                         res.redirect(
                           `http://localhost:3000/verified/${message}`
                         );
@@ -480,8 +480,7 @@ router.post(
       });
 
       //generate jwt token
-      // const JWT_SECRET="sanket";
-      const JWT_SECRET = "bhavinauth";
+      const JWT_SECRET="sanket";
       const data = {user: {id: user.id}};
       const authtoken = jwt.sign(data, JWT_SECRET);
 
@@ -548,10 +547,7 @@ router.post(
       }
 
       //generate jwt token
-      // const JWT_SECRET="sanket";
-      const JWT_SECRET = "bhavinauth";
-
-      // console.log("helloo..........." , user)
+      const JWT_SECRET="sanket";
 
       const data = {user};
       const authtoken = jwt.sign(data, JWT_SECRET);
